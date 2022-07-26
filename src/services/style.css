@@ -1,0 +1,299 @@
+/* PADRINIZAÇÃO */
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+  --cor1: #D5D8DC;
+  --cor2: #ABB2B9;
+  --cor3: #808B96;
+  --dark1: #909497;
+  --dark2: #797D7F;
+  --dark3: #626567;
+  --ds: #626567;
+  font-family: lato;
+}
+
+@font-face {
+  src: url("./Lato-Light.ttf");
+  font-family: lato;
+}
+
+@font-face {
+  src: url("./Staatliches-Regular.ttf");
+  font-family: staatliches;
+}
+body{
+  background-color: var(--cor1);
+}
+
+body.dark{
+  background-color: var(--dark3)
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-main{
+}
+
+/* HEADER */
+
+header{
+  width: 100%;
+  height: 50px;
+  background-color: var(--cor2);
+  border-bottom: 1px solid var(--cor1);
+  color: #626567;
+}
+
+header.dark{
+  background-color: var(--dark2);
+}
+
+header img{
+  height: 32px;
+  padding: 0 16px;
+}
+
+/* HEADER > Pesquisa*/
+.nav{
+  width: 100%;
+}
+
+.input-containter{
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.nav input[type=text]{
+  width: 400px;
+  height: 30px;
+  padding: 0 8px;
+
+  border: none;
+  border-bottom: 1px solid var(--cor1);
+  outline: none;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.0);
+  transition: border 0.2s;
+}
+
+.iclose{
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.isearch{
+  cursor: pointer;
+}
+
+.isearch.dark, .iclose.dark, #pesquisa.dark{
+  color: var(--cor1);
+}
+
+/* HEADER > Tema*/
+.tema-container{
+}
+
+#check{
+  display: none;
+}
+
+#check:checked + label .bola{
+  transform: translateX(29px);
+}
+
+.tema-container label{
+  width: 65px;
+  height: 30px;
+
+  background-color: var(--cor1);
+  transform: scale(1);
+  padding: 4px;
+  border-radius: 30px;
+  border: 2px solid var(--cor3);
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.bola{
+  background-color: var(--cor3);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  color: var(--cor3);
+  position: absolute;
+  left: 4px;
+  transition: transform 0.2s;
+}
+
+.itema{
+  font-size: 22px;
+  margin: 0 2px;
+  color: #626567;
+}
+
+/* MAIN GRID */
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+  grid-gap: 8px;
+
+  margin: 32px;
+  padding: 12px;
+
+  border-radius: 5px;
+  background-color: var(--cor2);
+}
+
+.grid-item{
+  width: 250px; height: 250px;
+  padding: 6px;
+  flex-direction: column;
+
+  background-color: var(--cor1);
+  border-radius: 5px;
+}
+
+.grid-item img{
+  object-fit: cover;
+  max-height: 90%;
+  width: 100%;
+
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.grid-item img:hover{
+  transform: scale(0.98);
+}
+
+.titulo{
+  padding-top: 3px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* DETALHES */
+.pag{
+  flex-direction: column;
+  margin: 32px;
+  padding: 12px 0;
+
+  background-color: var(--cor2);
+  border-radius: 10px;
+}
+
+.imagem-container{
+  width: 80%;
+  height: 400px;
+}
+
+.imagem-container img{
+  width: 100%;
+  max-height: 100%;
+
+  object-fit: cover;
+  border-radius: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.imagem-container img:hover, .paragrafo:hover{
+  transform: scale(0.98);
+}
+
+.detalhes-container{
+  width: 80%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.paragrafo{
+  width: 100%;
+  padding: 6px;
+  margin: 8px 0;
+
+  background-color: var(--cor1);
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.paragrafo .titulo{
+  font-size: 2em;
+  color: var(--ds);
+}
+
+.resposta{
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.aviso{
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--ds);
+}
+
+/* FERRAMENTAS */
+.nav-container{
+  justify-content: space-between;
+  width: 100%;
+  margin: 12px 0 50px 0;
+}
+
+.nav-container{
+  width: 80%;
+}
+
+.voltar, .iferramentas{
+  color: var(--ds);
+  font-size: 32px;
+}
+
+.voltar:hover, .iferramentas:hover{
+  cursor: pointer;
+}
+
+.ferramentas{
+  width: 10%;
+  justify-content: flex-end;
+}
+
+.voltar-buscaContainer{
+  margin-top: 32px;
+  margin-left: 32px;
+}
+
+.voltar-busca{
+  cursor: pointer;
+  color: var(--cor3);
+}
+
+/* FOOTER */
+footer{
+  width: 100%;
+  height: 40px;
+}
+
+a{
+  color: #626567;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+a:hover{
+  opacity: 1
+}
+
+a.dark{
+  color: var(--cor1);
+}
+
+@media only screen and (max-width: 500px) {
+}
